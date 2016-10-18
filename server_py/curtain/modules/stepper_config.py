@@ -1,0 +1,24 @@
+import RPi.GPIO as GPIO
+import time
+
+step_time = 0.0035
+steps = 500
+
+x0 = 17; x1 = 22; x2 = 23; x3 = 24;
+
+def gpio_setup(x0,x1,x2,x3):
+	GPIO.setmode(GPIO.BCM)
+	GPIO.setwarnings(False)
+	GPIO.setup(x0, GPIO.OUT)
+	GPIO.setup(x1, GPIO.OUT)
+	GPIO.setup(x2, GPIO.OUT)
+	GPIO.setup(x3, GPIO.OUT)
+
+def stepping(GPIO_0, GPIO_1, GPIO_2, GPIO_3):
+  GPIO.output(x0, GPIO_0)
+  GPIO.output(x1, GPIO_1)
+  GPIO.output(x2, GPIO_2)
+  GPIO.output(x3, GPIO_3)
+
+def time_step(x_time):
+  time.sleep(x_time)

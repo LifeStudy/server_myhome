@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Control House Araujo&Silva</title>
+  <link rel="stylesheet" href="stylesheets/dist/css/bootstrap.min.css">
+  <script src="javascripts/index.js"></script>
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+  <script src="/socket.io/socket.io.js"></script>
+
+  <style>
+    h4 {
+      margin: 40px 0 10px;
+    }
+
+    .nav-tabs {
+      margin-bottom: 15px;
+    }
+  </style>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+<div class="container">
+
+  <div class="page-header">
+    <h1>Control House<small> Araujo&Silva</small></h1>
+  </div>
+
+  <h4>Painel Control</h4>
+
+  <ul id="myTab" class="nav nav-tabs">
+    <li><a href="#home" data-toggle="tab">Light Home</a></li>
+    <li><a href="#profile" data-toggle="tab">Curtain Home</a></li>
+  </ul>
+  <div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade" id="home">
+      <div><h1>Lamp Room</h1></div>
+	<div>
+		<button onclick="send_room_on()">Lamp On</button>
+	</div>
+	<div>
+		<button onclick="send_room_off()">Lamp Off</button>
+	</div>
+      <p></p>
+    </div>
+    <div class="tab-pane fade" id="profile">
+      <div><h1>Curtain Bedroom</h1></div>
+	<div>
+		<button onclick="send_curtain_open()">Curtain Open</button>
+	</div>
+	<div>
+		<button onclick="send_curtain_close()">Curtain Close</button>
+	</div>
+      <p></p>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript Includes -->
+<script src="stylesheets/JS/vendor/jquery.min.js"></script>
+<script src="stylesheets/JS/transition.js"></script>
+<script src="stylesheets/JS/tab.js"></script>
+<script src="stylesheets/JS/dropdown.js"></script>
+
+</body>
+</html>
