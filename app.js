@@ -12,12 +12,12 @@ socket.on('connect', function (client) {
   client.on('control_lamps', function(lamps){
     console.log("Servidor " + lamps);
 
-  if(lamps == "lamp_room_on"){
+if(lamps == "lamp_room_on"){
     action("lamps/lamp_room_on.py");
-  }else if(lamps == "lamp_room_off"){
+  } else if(lamps == "lamp_room_off"){
     action("lamps/lamp_room_off.py");
   }
-  client.broadcast.emit("control_lamps", lamps);
+    client.broadcast.emit("control_lamps", lamps);
   });
 });
 

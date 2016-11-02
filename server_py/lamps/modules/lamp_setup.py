@@ -1,12 +1,11 @@
-import RPi.GPIO as GPIO
+import mraa
 
-def gpio_config(gpio):
-	GPIO.setmode(GPIO.BCM)
-	GPIO.setwarnings(False)
-	GPIO.setup(gpio,GPIO.OUT)
-	
-def lamp_on(gpio_io):
-	GPIO.output(gpio_io,GPIO.HIGH)
+def lamp_on(pin):
+  lamp = mraa.Gpio(pin)
+  lamp.dir(mraa.DIR_OUT)
+  lamp.write(1)
 
-def lamp_off(gpio_io):
-	GPIO.output(gpio_io,GPIO.LOW)
+def lamp_off(pin):
+  lamp = mraa.Gpio(pin)
+  lamp.dir(mraa.DIR_OUT)
+  lamp.write(0)
